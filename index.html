@@ -6,42 +6,102 @@
     <title>VORTEX STUDIO | من نحن</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --p: #a855f7; --bg: #0d0118; --c: rgba(255, 255, 255, 0.05); }
-        body { background: var(--bg); color: #fff; font-family: sans-serif; margin: 0; text-align: center; }
-        
-        .header { padding: 40px 20px; background: linear-gradient(to bottom, rgba(168, 85, 247, 0.1), transparent); }
-        .logo-img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--p); box-shadow: 0 0 20px var(--p); margin-bottom: 15px; }
-        
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        
-        /* بطاقة التعريف الشخصية */
-        .profile-card { background: var(--c); border-radius: 30px; padding: 30px; border: 1px solid rgba(168, 85, 247, 0.2); backdrop-filter: blur(10px); position: relative; overflow: hidden; }
-        .profile-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--p); }
-        
-        .user-avatar { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--p); padding: 5px; margin-bottom: 20px; object-fit: cover; }
-        
-        h2 { color: var(--p); margin-bottom: 15px; font-size: 1.8rem; }
-        .description { color: #ccc; line-height: 1.8; font-size: 1.05rem; margin-bottom: 30px; }
+        /* إعدادات الألوان العامة */
+        :root {
+            --primary: #a855f7;
+            --bg-dark: #0d0118;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-gray: #b3b3b3;
+        }
 
-        /* قسم الخدمات */
-        .services-grid { display: grid; gap: 15px; text-align: right; }
-        .service-box { background: rgba(168, 85, 247, 0.05); padding: 15px 20px; border-radius: 15px; border-right: 4px solid var(--p); display: flex; align-items: center; gap: 15px; }
-        .service-box i { color: var(--p); font-size: 1.3rem; width: 30px; text-align: center; }
-        .service-box span { font-weight: bold; }
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-        .btn-discord { display: flex; align-items: center; justify-content: center; gap: 10px; background: #5865F2; color: #fff; text-decoration: none; padding: 15px; border-radius: 15px; margin-top: 30px; font-weight: bold; transition: 0.3s; box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3); }
-        .btn-discord:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(88, 101, 242, 0.4); }
+        /* الهيدر مع شعار السيرفر */
+        .header {
+            width: 100%;
+            padding: 40px 0;
+            background: linear-gradient(to bottom, rgba(168, 85, 247, 0.15), transparent);
+            text-align: center;
+        }
 
-        .footer { padding: 30px; color: #555; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
+        .server-logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 25px var(--primary);
+            margin-bottom: 15px;
+        }
 
-    <div class="header">
-        <img src="https://i.postimg.cc/PqdgSDhp/A4273DB5-986C-4720-8FB1-670A32CA1ECA.png" class="logo-img">
-        <h1 style="text-shadow: 0 0 15px var(--p); letter-spacing: 1px;">VORTEX STUDIO</h1>
-    </div>
+        .studio-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px var(--primary);
+            margin: 0;
+        }
 
-    <div class="container">
-        <div class="profile-card">
-            <img src="https
+        /* حاوية المحتوى */
+        .container {
+            max-width: 700px;
+            width: 90%;
+            padding: 20px;
+        }
+
+        /* بطاقة التعريف */
+        .main-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 40px;
+            padding: 40px 30px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        /* صورتك الشخصية */
+        .user-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 30px; /* شكل عصري مربع بحواف دائرية */
+            border: 2px solid #fff;
+            margin-bottom: 25px;
+            transform: rotate(-3deg);
+            transition: 0.3s;
+        }
+        .user-photo:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .about-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            line-height: 1.9;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 35px;
+        }
+
+        /* شبكة الخدمات */
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: right;
+        }
+
+        .service-card {
+            background: rgba(168, 85, 247, 0.0
