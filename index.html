@@ -6,102 +6,123 @@
     <title>VORTEX STUDIO | من نحن</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* إعدادات الألوان العامة */
-        :root {
-            --primary: #a855f7;
-            --bg-dark: #0d0118;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --text-gray: #b3b3b3;
-        }
-
         body {
-            background-color: var(--bg-dark);
+            background-color: #0d0118; /* لون الخلفية الأساسي */
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
         }
 
-        /* الهيدر مع شعار السيرفر */
-        .header {
-            width: 100%;
-            padding: 40px 0;
-            background: linear-gradient(to bottom, rgba(168, 85, 247, 0.15), transparent);
-            text-align: center;
-        }
-
-        .server-logo {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 25px var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .studio-name {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-shadow: 0 0 15px var(--primary);
-            margin: 0;
-        }
-
-        /* حاوية المحتوى */
-        .container {
-            max-width: 700px;
-            width: 90%;
+        .main-container {
+            max-width: 500px;
+            margin: 40px auto;
             padding: 20px;
-        }
-
-        /* بطاقة التعريف */
-        .main-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            border-radius: 40px;
-            padding: 40px 30px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
         }
 
-        /* صورتك الشخصية */
-        .user-photo {
-            width: 130px;
-            height: 130px;
-            border-radius: 30px; /* شكل عصري مربع بحواف دائرية */
-            border: 2px solid #fff;
-            margin-bottom: 25px;
-            transform: rotate(-3deg);
-            transition: 0.3s;
-        }
-        .user-photo:hover {
-            transform: rotate(0deg) scale(1.05);
+        /* شعار السيرفر */
+        .server-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #a855f7;
+            box-shadow: 0 0 15px #a855f7;
+            margin-bottom: 10px;
         }
 
-        .about-title {
-            color: var(--primary);
-            font-size: 1.8rem;
+        h1 {
+            color: #a855f7;
+            text-shadow: 0 0 10px #a855f7;
+            margin-bottom: 30px;
+        }
+
+        /* البطاقة التعريفية */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 25px;
             margin-bottom: 20px;
         }
 
+        /* صورتك الشخصية */
+        .my-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            border: 2px solid #fff;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
         .about-text {
-            line-height: 1.9;
             font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 35px;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
 
-        /* شبكة الخدمات */
-        .services-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        /* الخدمات */
+        .service {
+            background: rgba(168, 85, 247, 0.1);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
             text-align: right;
+            border-right: 4px solid #a855f7;
         }
 
-        .service-card {
-            background: rgba(168, 85, 247, 0.0
+        .service i {
+            color: #a855f7;
+            margin-left: 10px;
+        }
+
+        /* زر الديسكورد */
+        .discord-btn {
+            display: block;
+            background: #5865F2;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <img src="https://i.postimg.cc/PqdgSDhp/A4273DB5-986C-4720-8FB1-670A32CA1ECA.png" class="server-logo">
+        <h1>VORTEX STUDIO</h1>
+
+        <div class="card">
+            <img src="https://i.postimg.cc/3RczrbG9/photo-output.png" class="my-photo">
+            
+            <p class="about-text">
+                نحن وجهتكم الأولى في عالم التطوير والبرمجة، نقدم لكم أفضل الحلول التقنية لإدارة وتطوير مشاريعكم باحترافية.
+            </p>
+
+            <div class="service"><i class="fab fa-discord"></i> برمجة أنظمة ديسكورد</div>
+            <div class="service"><i class="fas fa-code"></i> سكربتات روبلوكس حصرية</div>
+            <div class="service"><i class="fas fa-laptop-code"></i> حلول برمجية متكاملة</div>
+        </div>
+
+        <a href="https://discord.gg/ghJ3NcvsJs" class="discord-btn">
+            <i class="fab fa-discord"></i> انضم لسيرفرنا ديسكورد
+        </a>
+
+        <div class="footer">
+            جميع الحقوق محفوظة لـ VORTEX STUDIO © 2026
+        </div>
+    </div>
+
+</body>
+</html>
